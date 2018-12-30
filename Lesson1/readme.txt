@@ -1,1 +1,1 @@
-DON'T forget to update the image location!!!!!!!!!
+Read and follow the adding image + video instructions

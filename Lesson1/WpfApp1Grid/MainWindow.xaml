@@ -16,17 +16,19 @@
               collapse pain: the code and you see only view / code
                to-do that: after collapsing choose -><- arrow or aboeve it XAML or below it Design!
         -->
-        
+
         <!-- Some XML background:
             https://www.w3schools.com/xml/xml_elements.asp 
             self-closing tags-->
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/> <!-- usually you not put number. and if you see number it is probably bad design. however here for a small border its ok -->
+            <ColumnDefinition Width="20"/>
+            <!-- usually you not put number. and if you see number it is probably bad design. however here for a small border its ok -->
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/> <!-- rest or panel. if x twice then split the rest of panel into two equal parts -->
+            <ColumnDefinition Width="*"/>
+            <!-- rest or panel. if x twice then split the rest of panel into two equal parts -->
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -38,16 +40,16 @@
             <RowDefinition Height="*"/>
             <!-- rest or panel. if x twice then split the rest of panel into two equal parts -->
             <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>            
-            <!-- lesson 2 -->
-            <!-- adding more items. it you not sure/forget then open the Toolbox > All WPF controls -->
-            <!-- or drag and drop from the Toolbox INTO the XAML! -->
+        </Grid.RowDefinitions>
+        <!-- lesson 2 -->
+        <!-- adding more items. it you not sure/forget then open the Toolbox > All WPF controls -->
+        <!-- or drag and drop from the Toolbox INTO the XAML! -->
 
-            <!-- if you start clicking TextBlock and click "Enable project code" (in the lower XAML design window):
+        <!-- if you start clicking TextBlock and click "Enable project code" (in the lower XAML design window):
                   you will get "Invalid Markup" on the XAML screen!!
                   you need a valid XAML for the window to show
             -->
-            <!-- Grid.Column/Rows are zero based. here zero is margin -->
+        <!-- Grid.Column/Rows are zero based. here zero is margin -->
 
         <!-- 
                    Grid.ColumnSpan="3"
@@ -121,30 +123,55 @@
 
                     <!-- 2. first show this -->
                     <!--<TextBlock Text="{Binding FirstName}"></TextBlock> -->
-                    
+
                     <!-- 3. after that - make Full name property in Person and use it as below -->
                     <!-- <TextBlock Text="{Binding FullName}"></TextBlock>-->
                     <!-- later we can add image here -->
 
-                    
-                     <!-- 4. after completing all return here and make a StackPanel -->
+
+                    <!-- 4. after completing all return here and make a StackPanel -->
                     <!-- you could also add check box, video, and more... -->
                     <!-- this items are not part of the grid and have not column, row -->
                     <!-- you can make a grid inside the combo -->
+
+                    
+                    
+                    
+                    <!-- Adding RESOURCE IMAGE
+                            Create a folder in the solution named Resource
+                            add files into it (Project > Add)
+                            click the image + F4 > Build Action > Resource
+                            <Image Source="/Resources/pic.jpg"  />
+                            -->
+
+
+                    <!-- Adding VIDEO IMAGE
+                            Create a folder in the solution named Resource
+                            add files into it (Project > Add)
+                            click the image + F4 > Build Action > Embedded Resource
+                            ALSO ==> CopyToOutputDirectory > Always!!!
+                            <MediaElement Source="Resources/funny.mp4" ></MediaElement>
+                            -->
+                    
+
+
+
+
+
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" 
+                        <Image Source="/Resources/pic.jpg"   
                                Height="20" Width="20"/>
                         <TextBlock Text="{Binding FirstName}"/>
                         <TextBlock Text="{Binding LastName}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
-            
+
             <!-- now move the combo box before the Submin button also change row to 5, etc.
                 add Margin="10"
             -->
 
-     
+
 
         </ComboBox>
 
@@ -155,26 +182,26 @@
             you can add height width and ALSO max-height max-width
             -->
         <!--
-        <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" ></Image> 
+        <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Source="/Resources/pic.jpg"></Image> 
         -->
 
         <!-- Question:
             not working why?? it is shown in designer but not when running!! -->
-        <!-- <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Source="/Images/pic.jpg"/> -->
+        <!-- <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Source="/Resources/pic.jpg"  /> -->
 
         <!-- Add video
-        <MediaElement Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images\funny.mp4" ></MediaElement>
+        <MediaElement Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Source="/Resources/funny.mp4" ></MediaElement>
         -->
-        
+
         <!-- now lets replace the image with StackPanel -->
         <!-- try modify the Vertical to Horizontal -->
         <!--
         <StackPanel Grid.Row="1" Grid.Column="4" Grid.RowSpan="6"
                     Orientation="Vertical">
-            <Image MaxHeight="100" Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
+            <Image MaxHeight="100" Source="/Resources/pic.jpg"  />
+            <Image Source="/Resources/pic.jpg"  />
+            <Image Source="/Resources/pic.jpg"  />
+            <Image Source="/Resources/pic.jpg"  />
         </StackPanel>
         -->
 
@@ -184,10 +211,10 @@
         <!--
         <WrapPanel Grid.Row="1" Grid.Column="4" Grid.RowSpan="6"
                     Orientation="Vertical">
-            <Image MaxHeight="100" Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
+            <Image MaxHeight="100" Source="/Resources/pic.jpg"  />
+            <Image Source="/Resources/pic.jpg"  />
+            <Image Source="/Resources/pic.jpg"  />
+            <Image Source="/Resources/pic.jpg"  />
         </WrapPanel>
         -->
 
@@ -199,13 +226,14 @@
         <ScrollViewer Grid.Row="1" Grid.Column="4" Grid.RowSpan="6">
             <StackPanel 
                     Orientation="Vertical">
-            <Image MaxHeight="100" Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
-            <Image Source="C:\Users\itayh\source\repos\WpfApp2Grid\WpfApp1Grid\Images /pic.jpg" />
+                <MediaElement Source="Resources/funny.mp4" ></MediaElement>
+                <Image MaxHeight="100" Source="/Resources/pic.jpg"  />
+                <Image Source="/Resources/pic.jpg"  />
+                <Image Source="/Resources/pic.jpg"  />
+                <Image Source="/Resources/pic.jpg"  />
             </StackPanel>
         </ScrollViewer>
-        
+
         <!-- now go up and improve the combo back with stack panel -->
     </Grid>
 </Window>
