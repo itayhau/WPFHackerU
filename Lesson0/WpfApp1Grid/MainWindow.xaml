@@ -1,0 +1,116 @@
+﻿<Window x:Class="WpfApp1Grid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1Grid"
+        mc:Ignorable="d" FontSize="24"
+        Title="Lessons" Height="350" Width="525">
+    <Grid>
+
+        <!-- lesson 1 -->
+
+        <!-- dont drag and drop becuase it will give you absolute coordinates and it ruins the Responsive idea -->
+
+        <!-- show upper right buttons + vertical split is better because you have more space horizontally! 
+              collapse pain: the code and you see only view / code
+               to-do that: after collapsing choose -><- arrow or aboeve it XAML or below it Design!
+        -->
+        
+        <!-- Some XML background:
+            https://www.w3schools.com/xml/xml_elements.asp 
+            self-closing tags-->
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/> <!-- usually you not put number. and if you see number it is probably bad design. however here for a small border its ok -->
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/> <!-- rest or panel. if x twice then split the rest of panel into two equal parts -->
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <!-- rest or panel. if x twice then split the rest of panel into two equal parts -->
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>            
+            <!-- lesson 2 -->
+            <!-- adding more items. it you not sure/forget then open the Toolbox > All WPF controls -->
+            <!-- or drag and drop from the Toolbox INTO the XAML! -->
+
+            <!-- if you start clicking TextBlock and click "Enable project code" (in the lower XAML design window):
+                  you will get "Invalid Markup" on the XAML screen!!
+                  you need a valid XAML for the window to show
+            -->
+            <!-- Grid.Column/Rows are zero based. here zero is margin -->
+
+        <!-- 
+                   Grid.ColumnSpan="3"
+                   Margin="20"
+                    try Margin ="20,0"
+                    try Margin ="20,0,0" "20, 0, 0, 0" - it goes clockwise left, top, right, bottom
+                    this should be added later not now!!!!!!!!!
+                    See below in text box
+        -->
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Hello World!" FontSize="24"  
+                   Grid.ColumnSpan="3"
+                   Margin="0, 0, 0, 20"
+                   />
+        <!--  you can see that changing the size will adjust the screen. why? because of *
+            What if I dont know FontSize? 
+            Click on the TextBlock in the XAML + F4 and see Properties
+            [you should see Type: TextBlock]
+            now: modify the Text (empty?) + Enter and you will see the text changes in the
+            XAML code window [here].
+            You can see the XAML changed the XML to TextBlock self-closing
+        
+            modify: in the Properties -> Text > 28 [size] > 24
+                you will see the text changes in the
+                XAML code window [here].
+        -->
+
+        <!-- you dont want to modify the Font-size for all of the form
+                if you want to change , go to the start of the XAML code window[here]
+                modify: Title.
+                    what about the Height/Width? this is the startup size
+                    modify the Height to 500 and then restore
+                Add: FontSize to "18" now it is the default font size of this form
+                        when ever we not specify the FontSize will get this 18
+                Add: FontFamily="Segoe UI Light"
+        -->
+        <!-- you can add line breaks as much as you want it not matter to XAML code! -->
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="First Name:" FontSize="14" 
+                   FontFamily="Segoe UI" FontWeight="SemiBold"/>
+
+        <!-- we give name if we want to reference. 
+             here we didn't named the above because we don't refer them 
+             here we want to reference the text box
+        -->
+        <!-- we can write width="150" 
+                Run! -->
+        <TextBox x:Name="firstNameText" Grid.Column="2" Grid.Row="2"  Width="150"
+                 Margin="10, 0, 0, 0" />
+        <!-- why is there a space? because its like the width of: Hello World demo text   -->
+        <!-- how to fix that? modify Hello world text to Grid.ColumnSpan="3" -->
+        <!-- how to move the text box away from the first name?  Grid.ColumnSpan="3" to Hello World -->
+
+        <!-- you can specify CONTENT or write it between the XMLs instead of self-closiong-->
+        <!--<Button Content="Submit" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"?></Button> -->
+        <!-- Button spans all over the box in the table -->
+        <Button x:Name="submitBtn" Grid.Column="1" Grid.Row="3" Margin="10" Grid.ColumnSpan="2" Click="submitBtn_Click">Submit</Button>
+
+        <!-- now click on the button + F4
+            Click on the Event button (lightning)
+            Find 'Click' event, and dbl-click on the text box beside it
+            
+            How to remove hte black debug tool-bar:
+            Tools > Options > SearchOption : "XAML" > Debugging > Uncheck: Enable UI tools for XAML
+        -->
+    </Grid>
+</Window>
