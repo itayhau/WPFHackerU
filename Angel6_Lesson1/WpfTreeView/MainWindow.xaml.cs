@@ -38,12 +38,16 @@ namespace WpfTreeView
                 var item = new TreeViewItem()
                 {
                     // Set the header
-                    Header = drive,
+                    Header = drive, // <-- the Text {Binding} is attached to this
+
                     // And the full path
+                    // Tag stores any information you want
                     Tag = drive
                 };
 
-                // Add a dummy item
+                
+
+                // Add a dummy item in order to get the expand icon '>' for each drive
                 item.Items.Add(null);
 
                 // Listen out for item being expanded
@@ -70,6 +74,7 @@ namespace WpfTreeView
             var item = (TreeViewItem)sender;
 
             // If the item only contains the dummy data
+            // check if the items not contain only 1 null item, because we wrote:  item.Items.Add(null);
             if (item.Items.Count != 1 || item.Items[0] != null)
                 return;
 
@@ -95,6 +100,7 @@ namespace WpfTreeView
                 if (dirs.Length > 0)
                     directories.AddRange(dirs);
             }
+            // maybe user not have permission to folder...
             catch { }
 
             // For each directory...

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfTreeView"
         Loaded="Window_Loaded"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" WindowStartupLocation="CenterScreen">
     <Grid>
 
         <TreeView x:Name="FolderView">
@@ -17,12 +17,37 @@
                         <Setter.Value>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
+
+                                    <!-- we bind the Image SOURCE string -->
+                                    <!-- open HeaderToImageConverter.cs -->
+                                    <!-- we not need the header here (in oppose to TextBlock below) -->
+                                    <!-- we need the TAG, how do we find it?
+                                            to do that we need an Ancestor which is a TreeViewItem , 
+                                            so, we seek for Ancesestor and go up until we find a TreeViewItem:
+                                               RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}
+                                            from it we need the Tag property: 
+                                               Path=Tag 
+                                    -->
+                                    <!-- then we need to Convert the Tag string into an Image,
+                                         so we use the Converter static Instace:
+                                            Converter={x:Static local:HeaderToImageConverter.Instance}}
+                                         why local?
+                                            look above (line 6)
+                                            xmlns:local="clr-namespace:WpfTreeView"
+                                            we need the namespace, so we made a variable named local and used it here
+                                   -->
+                                    <!-- You can also copy paste this part into the TextBlock and then you will see the Path text -->
                                     <Image Width="20" Margin="3" 
                                         Source="{Binding
                                             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}},
                                             Path=Tag,
                                             Converter={x:Static local:HeaderToImageConverter.Instance}}" />
-                                    <TextBlock VerticalAlignment="Center" Text="{Binding}" />
+
+                                         <!-- {Binding} Attach the Text to the location context of the string 
+                                               here we are in HeaderTemplate so the sring is the TreeViewItem.Header
+                                          -->
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding}" /> 
+
                                 </StackPanel>
                             </DataTemplate>
                         </Setter.Value>

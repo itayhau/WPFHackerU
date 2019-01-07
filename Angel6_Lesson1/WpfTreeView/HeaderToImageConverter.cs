@@ -16,6 +16,9 @@ namespace WpfTreeView
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            // add breakpoint here and see which value is passed each time!
+            var stop = true;
+
             // Get the full path
             var path = (string)value;
 
@@ -35,9 +38,13 @@ namespace WpfTreeView
             else if (new FileInfo(path).Attributes.HasFlag(FileAttributes.Directory))
                 image = "Images/folder-closed.png";
 
+            // because it is a resource we need to add:
+            // pack = package
+            // this is how WPF compiles the resources into a Uri
             return new BitmapImage(new Uri($"pack://application:,,,/{image}"));
         }
 
+        // most converter go one-way
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
