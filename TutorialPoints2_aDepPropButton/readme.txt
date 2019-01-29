@@ -1,0 +1,1 @@
+Simple Dependency property for mouse over which changes the ForeGround to Red
