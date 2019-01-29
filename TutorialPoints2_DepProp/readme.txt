@@ -1,4 +1,5 @@
-Start first with the OTHER DepProp of the Button - MouseOver
+START first with the OTHER DepProp: (of the Button - MouseOver)
+ TutorialPoints2_aDepPropButton
 
 Creating Dependency property
 In the project need to create new UserControll called MyUserControl
