@@ -1,0 +1,24 @@
+﻿<Window x:Class="_2107.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2107"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid>
+        <Slider IsSnapToTickEnabled="True" x:Name="MySlider" HorizontalAlignment="Left" Margin="91,52,0,0" 
+                Minimum="0" Maximum="100" VerticalAlignment="Top" Width="310"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="140,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                 Text="{Binding ElementName=MySlider, Path=Value, Mode=OneWay}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="140,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+            Text="{Binding Value, ElementName=MySlider, Mode=TwoWay,
+            UpdateSourceTrigger=PropertyChanged}"/>
+
+
+
+    </Grid>
+</Window>
