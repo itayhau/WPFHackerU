@@ -35,5 +35,10 @@ namespace _2107
         {
             this.Resources["DynamicColor"] = new SolidColorBrush(Colors.Green);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Resources["DynamicColor"] = new SolidColorBrush(Colors.Blue);
+        }
     }
 }

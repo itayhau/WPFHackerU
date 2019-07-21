@@ -16,13 +16,20 @@
         </SolidColorBrush>
     </Window.Resources>
     <Grid>
+        <Grid.Resources>
+            <!-- 4 type -->
+            <SolidColorBrush Color="Blue"  x:Key="GridColorBlue"/>
+        </Grid.Resources>
         <Button Content="Button" HorizontalAlignment="Left" 
                Background="{StaticResource YellowBrush}" Margin="208,37,0,0" VerticalAlignment="Top" Width="126" Height="51" Click="Button_Click"/>
         <Button Content="Button" HorizontalAlignment="Left" 
                 Background="{StaticResource GreenBrushGlobal}" Margin="208,112,0,0" VerticalAlignment="Top" Width="126" Height="48" Click="Button_Click_1"/>
-        <Border BorderBrush="Black" BorderThickness="1" 
-                 HorizontalAlignment="Left" Height="97" Margin="175,201,0,0" VerticalAlignment="Top" Width="187"
-                Background="{DynamicResource DynamicColor}"/>
+        <Button Content="Button" HorizontalAlignment="Left" 
+                Background="{StaticResource GridColorBlue}" Margin="208,184,0,0" VerticalAlignment="Top" Width="126" Height="35" Click="Button_Click_2"/>
 
+        <Border BorderBrush="Black" BorderThickness="1" 
+                 HorizontalAlignment="Left" Height="54" Margin="175,244,0,0" VerticalAlignment="Top" Width="187"
+                Background="{DynamicResource DynamicColor}"/>
+       
     </Grid>
 </Window>
