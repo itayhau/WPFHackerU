@@ -27,6 +27,13 @@
             </Button.Style>
         </Button>
 
-
+        <Button Content="Button" HorizontalAlignment="Left" Margin="195,98,0,0" VerticalAlignment="Top" Width="111" Height="45">
+                        <Button.Style>
+                <!-- 3. inheritance-->
+                <Style TargetType="Button" BasedOn="{StaticResource MyStyle}">
+                    <Setter Property="Foreground" Value="Blue"/>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>
