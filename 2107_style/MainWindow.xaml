@@ -1,0 +1,32 @@
+﻿<Window x:Class="_2107.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2107"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+
+        <!-- 2. outter - like CSS -->
+        <Style TargetType="Button" x:Key="MyStyle">
+            <Setter Property="Foreground" Value="LightCoral"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" 
+                Style="{StaticResource MyStyle}" Margin="208,184,0,0" VerticalAlignment="Top" Width="126" Height="35" Click="Button_Click_2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="195,98,0,0" VerticalAlignment="Top" Width="111" Height="45">
+            <Button.Style>
+                <!-- 1. inner -->
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="FontWeight" Value="ExtraBold"/>
+                </Style>
+            </Button.Style>
+        </Button>
+
+
+    </Grid>
+</Window>
