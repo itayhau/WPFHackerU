@@ -1,0 +1,28 @@
+﻿<Window x:Class="_2107.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2107"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <!-- step 1 window resource-->
+        <!-- step 2 move ti to app.xaml for all windows -->
+        <!-- step 3 dynamic resource -->
+
+        <SolidColorBrush Color="Yellow"  x:Key="YellowBrush">
+
+        </SolidColorBrush>
+    </Window.Resources>
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" 
+               Background="{StaticResource YellowBrush}" Margin="208,37,0,0" VerticalAlignment="Top" Width="126" Height="51" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" 
+                Background="{StaticResource GreenBrushGlobal}" Margin="208,112,0,0" VerticalAlignment="Top" Width="126" Height="48" Click="Button_Click_1"/>
+        <Border BorderBrush="Black" BorderThickness="1" 
+                 HorizontalAlignment="Left" Height="97" Margin="175,201,0,0" VerticalAlignment="Top" Width="187"
+                Background="{DynamicResource DynamicColor}"/>
+
+    </Grid>
+</Window>
