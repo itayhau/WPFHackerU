@@ -42,7 +42,9 @@ namespace Bubble
 
         private void Button_PreviewMouseMove(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("Mouse move by the outter button"); 
+            //MessageBox.Show("Mouse move by the outter button"); 
+            //this.txt1.Text = Mouse.GetPosition(Application.Current.MainWindow).X.ToString();
+            this.Title = "X = " + Mouse.GetPosition(Application.Current.MainWindow).X.ToString();
         }
     }
 }

@@ -23,5 +23,6 @@
                 </Canvas>
             </StackPanel>
         </Button>
+      
     </Grid>
 </Window>
