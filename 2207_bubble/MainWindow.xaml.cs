@@ -37,7 +37,7 @@ namespace Bubble
 
         private void InnerButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("I am the inner button!");
+            MessageBox.Show("I am the inner button!"); // tunnel this ! yeah!!
         }
 
         private void Button_PreviewMouseMove(object sender, MouseEventArgs e)
@@ -45,6 +45,11 @@ namespace Bubble
             //MessageBox.Show("Mouse move by the outter button"); 
             //this.txt1.Text = Mouse.GetPosition(Application.Current.MainWindow).X.ToString();
             this.Title = "X = " + Mouse.GetPosition(Application.Current.MainWindow).X.ToString();
+        }
+
+        private void InnerElippse_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            this.Title = "Bubble = " + Mouse.GetPosition(Application.Current.MainWindow).X.ToString();
         }
     }
 }

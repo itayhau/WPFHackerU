@@ -19,7 +19,8 @@
                     <Ellipse Name="InnerElippse" Fill="Yellow" Height="51"
                              Canvas.Left="110" 
                             Canvas.Top="-1"
-                             Width="82" Cursor="Hand" MouseDown="OuterElippse_MouseDown"/>
+                             Width="82" Cursor="Hand" MouseDown="OuterElippse_MouseDown"
+                             PreviewMouseMove="InnerElippse_PreviewMouseMove"/>
                 </Canvas>
             </StackPanel>
         </Button>
