@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp6
 {
-    public class PersonVM : INotifyPropertyChanged, IDataErrorInfo
+    public class PersonVM : IDataErrorInfo
     {
         private string mobileNumber;
         public string MobileNumber
@@ -17,7 +17,7 @@ namespace WpfApp6
             set
             {
                 mobileNumber = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("MobileNumber"));
+
             }
         }
 
@@ -28,7 +28,7 @@ namespace WpfApp6
             set
             {
                 name = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Name"));
+
             }
         }
 
@@ -62,6 +62,5 @@ namespace WpfApp6
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
     }
 }
